@@ -23,7 +23,7 @@ header {
   background-color: var(--azul-claro);
   color: var(--branco);
   padding: 0.8rem 1.5rem;
-  position: sticky;
+  /* position: sticky; */
   top: 0;
   z-index: 1000;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -40,7 +40,8 @@ header {
   margin-block: 1rem;
   line-height: 1.3rem;
 }
-.dia span{
+
+.dia span {
   color: red;
   font-weight: bold;
 }
@@ -200,5 +201,109 @@ footer {
     display: flex;
     z-index: 1000;
     /* garante que o botão fica sempre acima */
+  }
+}
+
+
+
+
+.floating-countdown {
+  background: linear-gradient(90deg, #64b5f6, #1565c0);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  /* acima de header e nav */
+  /* z-index: 2000;  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pulse 2s infinite;
+  max-width: 95%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.floating-countdown h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  animation: bounce 1.5s infinite;
+  text-align: center;
+}
+
+.floating-countdown .timer {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.floating-countdown .timer div {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  min-width: 50px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.floating-countdown .timer div:hover {
+  transform: scale(1.1);
+}
+
+.floating-countdown .timer span {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .floating-countdown h1 {
+    font-size: 1rem;
+  }
+
+  .floating-countdown .timer span {
+    font-size: 1rem;
+  }
+}
+
+/* Responsividade específica para celular */
+@media (max-width: 480px) {
+
+  .floating-countdown .timer .minutes,
+  .floating-countdown .timer .seconds {
+    display: none;
+    /* Esconde minutos e segundos */
+  }
+
+  .floating-countdown h1 {
+    font-size: 1rem;
+  }
+
+  .floating-countdown .timer span {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animação de "pulse" para o título */
+.floating-countdown h1 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+  text-align: center;
+  animation: pulseText 1.5s infinite;
+  /* chama a animação */
+}
+
+@keyframes pulseText {
+  0% {
+    transform: scale(1);
+  }
+
+  /* aumenta 10% */
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }
