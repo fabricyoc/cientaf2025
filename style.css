@@ -36,6 +36,15 @@ header {
   height: 100px;
 }
 
+.dia {
+  margin-block: 1rem;
+  line-height: 1.3rem;
+}
+.dia span{
+  color: red;
+  font-weight: bold;
+}
+
 nav {
   display: flex;
   gap: 1rem;
