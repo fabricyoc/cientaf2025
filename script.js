@@ -15,7 +15,7 @@ document.addEventListener("click", (e) => {
 });
 
 // Data do evento: 11 de setembro de 2025
-const eventDate = new Date("September 11, 2025 00:00:00").getTime();
+const eventDate = new Date("September 11, 2025 18:30:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
