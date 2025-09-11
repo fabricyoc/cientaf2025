@@ -14,12 +14,17 @@ document.addEventListener("click", (e) => {
   }
 });
 
-// Data do evento: 11 de setembro de 2025
+// Data do evento: 11 de setembro de 2025 às 18h30
 const eventDate = new Date("September 11, 2025 18:30:00").getTime();
 
 function updateCountdown() {
   const now = new Date().getTime();
-  const distance = eventDate - now;
+  let distance = eventDate - now;
+
+  if (distance <= 0) {
+    clearInterval(countdownInterval);
+    distance = 0; // trava em 0
+  }
 
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
   const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -30,11 +35,6 @@ function updateCountdown() {
   document.getElementById("hours").innerText = hours.toString().padStart(2, "0");
   document.getElementById("minutes").innerText = minutes.toString().padStart(2, "0");
   document.getElementById("seconds").innerText = seconds.toString().padStart(2, "0");
-
-  if (distance < 0) {
-    clearInterval(countdownInterval);
-    document.querySelector(".countdown").innerHTML = "<h1>O evento começou!</h1>";
-  }
 }
 
 const countdownInterval = setInterval(updateCountdown, 1000);
