@@ -304,3 +304,21 @@ footer {
     transform: scale(1);
   }
 }
+
+.btnGaleria{
+  display: block;
+  padding: 0.8rem 1.2rem;
+  background-color: var(--azul-escuro);
+  color: var(--branco);
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
+  text-align: center;
+  margin-inline: auto;
+}
+
+.btnGaleria:hover {
+  background-color: #0d47a1;
+  transform: scale(1.05);
+}
